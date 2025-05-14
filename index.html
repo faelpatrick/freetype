@@ -22,7 +22,14 @@
     <div id="keyboard"></div>
 
     <div id="selection-area">
-        <div id="speak" class="action-button">🔊 Falar Texto</div>
+        <!-- <div id="speak" class="action-button">🔊 Falar Texto</div> -->
+				 <!-- Manual open a modal with tutorial -->
+				<button id="tutorial" class="action-button" onclick="openTutorial()">❓ Tutorial</button>
+<div class="tutorial-img" id="tutorial-img" style="display: none;">
+		<div class="close-button" onclick="closeTutorial()">X</div>
+		<img src="tutorial.png" alt="Tutorial">
+</div>
+	
     </div>
 
 		<footer>Desenvolvido por <a target="_blank" href="https://faelpatrick.com">Rafael Patrick</a></footer>

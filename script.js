@@ -99,3 +99,14 @@ function onResults(results) {
         setTimeout(() => canSelect = true, 1000);
     }
 }
+
+// tutorial img toggle
+const tutorialImg = document.getElementById('tutorial-img');
+
+function openTutorial() {
+		tutorialImg.style.display = 'block';
+}
+
+function closeTutorial() {
+		tutorialImg.style.display = 'none';
+}
