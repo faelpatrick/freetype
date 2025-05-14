@@ -16,16 +16,16 @@ body {
 }
 
 #output {
-    width: 80%;
+    width: 68%;
     border: 2px solid #333;
     border-radius: 8px;
-    padding: 10px;
-    font-size: 18px;
+    padding: 6px;
+    font-size: 2rem;
     resize: none;
 }
 
 #video-wrapper {
-    width: 20%;
+    width: 30%;
     height: 100%;
     position: relative;
     transform: scaleX(-1); /* Espelhando o vídeo */
@@ -43,17 +43,23 @@ video {
     position: absolute;
     z-index: 2;
     opacity: 0.3;
-}
-
-#left-border {
-    top: 0;
-    left: 0;
-    width: 20%;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .6rem;
+    font-weight: bold;
+    color: white;
 }
 
 #right-border {
+top: 0;
+left: 0;
+width: 20%;
+height: 100%;
+background-color: rgba(255, 0, 0, 0.3);
+}
+
+	#left-border {
     top: 0;
     right: 0;
     width: 20%;
@@ -66,8 +72,11 @@ video {
     left: 0;
     width: 100%;
     height: 30%;
-    background-color: rgba(0, 255, 0, 0.3);
+    background-color: rgba(0, 255, 0, 0.8);
+    text-align: center;
+    line-height: 5vh;
 }
+
 
 /* Segunda Linha: Teclado */
 #keyboard {
@@ -114,4 +123,18 @@ video {
     background-color: #d1d1d1;
     color: #333;
     font-size: 2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-top: 2px solid #333;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
 }

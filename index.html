@@ -9,12 +9,12 @@
     <div id="header">
         <textarea id="output" placeholder="O texto digitado aparecerá aqui..."></textarea>
         <div id="video-wrapper">
-            <video id="video" width="640" height="480" autoplay playsinline></video>
+            <video id="video" width="640" height="600" autoplay playsinline></video>
 
             <!-- Bordas de Navegação -->
-            <div id="left-border" class="border-zone"></div>
-            <div id="right-border" class="border-zone"></div>
-            <div id="bottom-border" class="border-zone"></div>
+            <div id="right-border" class="border-zone">🚯</div>
+            <div id="left-border" class="border-zone">⬅️</div>
+            <div id="bottom-border" class="border-zone">✅</div>
         </div>
     </div>
 
@@ -24,9 +24,11 @@
         <div id="speak" class="action-button">🔊 Falar Texto</div>
     </div>
 
+		<footer>Desenvolvido por <a target="_blank" href="https://faelpatrick.com">Rafael Patrick</a></footer>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
