@@ -3,8 +3,8 @@ const keyboardContainer = document.getElementById('keyboard');
 const output = document.getElementById('output');
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-// Adiciona o SIM, NÃO e ESPAÇO ao final do alfabeto
-alphabet.push("SIM", "NÃO", "ESPAÇO");
+// Adiciona o SIM, NÃO
+alphabet.push("SIM", "NÃO");
 
 // Criação das teclas do teclado virtual
 alphabet.forEach(letter => {
@@ -12,10 +12,9 @@ alphabet.forEach(letter => {
     key.classList.add('key');
     key.innerText = letter;
 
-    // Adiciona classes específicas para SIM, NÃO e ESPAÇO
+    // Adiciona classes específicas para SIM e NÃO
     if (letter === "SIM") key.classList.add('yes');
     if (letter === "NÃO") key.classList.add('no');
-    if (letter === "ESPAÇO") key.classList.add('space');
 
     keyboardContainer.appendChild(key);
 });
@@ -36,6 +35,7 @@ setInterval(() => {
 
 // MediaPipe Configuração
 const videoElement = document.getElementById('video');
+
 const faceMesh = new FaceMesh({
     locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
 });
@@ -62,11 +62,13 @@ function onResults(results) {
     if (!results.multiFaceLandmarks[0]) return;
 
     const landmarks = results.multiFaceLandmarks[0];
-    const nose = landmarks[1];
+    const nose = landmarks[1]; // Ponto referente ao nariz
 
+    // Coordenadas do nariz relativas ao vídeo
     const x = nose.x * videoElement.clientWidth;
     const y = nose.y * videoElement.clientHeight;
 
+    // 🔄 Lógica de captura
     if (x < videoElement.clientWidth * 0.2 && canSelect) {
         output.value = "";
         activeIndex = 0;
@@ -88,5 +90,12 @@ function onResults(results) {
             canSelect = false;
             setTimeout(() => canSelect = true, 1000);
         }
+    }
+
+    // Nariz no topo → Adicionar espaço
+    if (y < videoElement.clientHeight * 0.2 && canSelect) {
+        output.value += " ";
+        canSelect = false;
+        setTimeout(() => canSelect = true, 1000);
     }
 }
