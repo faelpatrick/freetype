@@ -1,0 +1,117 @@
+/* Layout Principal */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #e8f5fe;
+}
+
+/* Primeira Linha: Campo de texto e vídeo */
+#header {
+    display: flex;
+    height: 10vh;
+    max-height: 10vh;
+}
+
+#output {
+    width: 80%;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 18px;
+    resize: none;
+}
+
+#video-wrapper {
+    width: 20%;
+    height: 100%;
+    position: relative;
+    transform: scaleX(-1); /* Espelhando o vídeo */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+/* Bordas de Navegação */
+.border-zone {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.3;
+}
+
+#left-border {
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#right-border {
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#bottom-border {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+/* Segunda Linha: Teclado */
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.key {
+    border: 2px solid #333;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Botões SIM, NÃO e ESPAÇO */
+.key.yes {
+    color: #4CAF50;
+}
+
+.key.no {
+    color: #F44336;
+}
+
+.key.space {
+    grid-column: span 4;
+    background-color: #d1d1d1;
+    color: #333;
+    font-size: 2rem;
+}
