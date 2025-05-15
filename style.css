@@ -11,18 +11,24 @@ body {
 /* Primeira Linha: Campo de texto e vídeo */
 #header {
     display: flex;
-    height: 10vh;
-    max-height: 10vh;
+    height: 16vh;
+    max-height: 16vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 1px 0px 1px;
 }
 
 #output {
-    width: 68%;
+    min-width: 68%;
+    width: -webkit-fill-available;
+    height: 105%;
+    margin: 4px;
     border: 2px solid #333;
     border-radius: 8px;
     padding: 6px;
     font-size: 2rem;
     resize: none;
-		text-decoration: underline;
+	text-decoration: underline;
 		
 }
 
