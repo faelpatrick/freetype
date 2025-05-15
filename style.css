@@ -27,7 +27,8 @@ body {
 }
 
 #video-wrapper {
-    width: 30%;
+    width: auto;
+    margin-left: 2px;
     height: 100%;
     position: relative;
     transform: scaleX(-1); /* Espelhando o vídeo */
